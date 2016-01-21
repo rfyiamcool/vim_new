@@ -1,6 +1,6 @@
 # vim_new
 
-一个权限的Python Vim配置.
+一个权限的Python Vim配置, 主要在于.vimrc , 我们可以使用vundle生成.vim里的bundle插件配置.  
 
 使用Vundle管理插件.  
 * vim-airline   主题效果
