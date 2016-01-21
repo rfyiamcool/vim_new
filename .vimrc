@@ -21,7 +21,6 @@ Bundle 'hdima/python-syntax'
 Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'rking/ag.vim'
-"Bundle 'sjl/gundo.vim'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -267,8 +266,6 @@ endif
 "gitgutter
 let g:gitgutter_escape_grep = 1
 
-"gundo
-nnoremap <F5> :GundoToggle<CR>
 
 " Run current file
 func! RunSrc()
@@ -347,8 +344,6 @@ function InsertPythonComment()
     normal o
     call setline('.', '# -*- coding:utf-8 -*-')
     normal o
-    call setline('.', '#')
-    normal o
     call setline('.', '#   Author  :   '.g:python_author)
     normal o
     call setline('.', '#   E-mail  :   '.g:python_email)
@@ -357,8 +352,6 @@ function InsertPythonComment()
     normal o
     call setline('.', '#   Desc    :   ')
     normal o
-    call setline('.', '#')
-    normal o
     call cursor(7, 17)
 endfunction
 function InsertCommentWhenOpen()
@@ -366,6 +359,10 @@ function InsertCommentWhenOpen()
         call InsertPythonComment()
     end
 endfunc
+
+let g:python_author = "fengyun"
+let g:python_email = "rfyiamcool@163.com"
+
 au FileType python :%call InsertCommentWhenOpen()
 au FileType python map <F2> :call InsertPythonComment()<cr>
 
