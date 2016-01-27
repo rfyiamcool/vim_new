@@ -73,6 +73,7 @@ set splitbelow
 """""""""""""""""""""""""""""""""""
 set t_Co=256
 set cursorline
+set cursorcolumn
 syntax enable
 set background=dark
 colorscheme monokai
@@ -371,3 +372,7 @@ au FileType python map <F2> :call InsertPythonComment()<cr>
 """""""""""""
 autocmd FileType python,shell set commentstring=#\ %s
 autocmd FileType mako set cms=##\ %s
+
+
+au BufRead *.py map <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
+
